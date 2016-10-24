@@ -15,6 +15,7 @@ group :development do
   gem 'spring'
 end
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
+gem 'sprockets-rails'
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
