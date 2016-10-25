@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'lockup'
+gem 'carrierwave'
 group :development, :test do
   gem 'byebug'
 end
