@@ -1,1 +1,4 @@
 <%# add navigation links to this file %>
+<li class="nav-item"><%= link_to 'Home', root_path, class: "nav-link" %></li>
+<li class="nav-item <%= 'active' if current_page?(data_manage_path) %>"><%= link_to 'Upload', data_manage_path, class: "nav-link" %></li>
+<li class="nav-item <%= 'active' if current_page?('session/index') %>"><%= link_to 'Download', { controller: "sessions", action: "index" }, class: "nav-link" %></li>

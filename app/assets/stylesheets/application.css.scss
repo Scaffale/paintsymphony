@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar-brand:hover {
+	background-color: #f7f7f9;
+}
+.nav-item {
+	a {
+		&:hover {
+			background-color: #f7f7f9;
+		}
+	}
+}
