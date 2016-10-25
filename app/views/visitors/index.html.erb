@@ -9,7 +9,7 @@
 			<div class="row">
 				<br>
 				<div class="col-md-4 offset-md-4">
-					<%= link_to "Go", @index, class: "btn btn-success btn-lg btn-block" %>
+					<%= link_to "Go", { controller: "sessions", action: "new" }, class: "btn btn-success btn-lg btn-block" %>
 				</div>
 			</div>
 		</div>
@@ -19,7 +19,7 @@
 			<div class="row">
 				<br>
 				<div class="col-md-4 offset-md-4">
-					<%= link_to "Collect", @index, class: "btn btn-warning btn-lg btn-block" %>
+					<%= link_to "Collect", settings_path, class: "btn btn-warning btn-lg btn-block" %>
 				</div>
 			</div>
 		</div>

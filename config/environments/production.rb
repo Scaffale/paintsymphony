@@ -76,4 +76,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Define lockup coreword to enter the admin page
+  ENV["LOCKUP_CODEWORD"] = 'liliana'
+  ENV["LOCKUP_HINT"] = 'Il nome della professoressa a capo del progetto (minuscolo).'
 end

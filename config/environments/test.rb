@@ -39,4 +39,8 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Define lockup coreword to enter the admin page
+  ENV["LOCKUP_CODEWORD"] = 'liliana'
+  ENV["LOCKUP_HINT"] = 'Il nome della professoressa a capo del progetto (minuscolo).'
 end
