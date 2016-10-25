@@ -11,7 +11,7 @@
   </head>
   <body>
     <header>
-      <% if current_page?('/data/settings') %>      
+      <% if (current_page?('/data/settings') || current_page?('/sessions') || current_page?('/data/manage')) %>      
         <%= render 'layouts/navigation' %>
       <% end %>
         
