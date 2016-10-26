@@ -1,29 +1,20 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Pictures</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pictures.each do |picture| %>
-      <tr>
-        <td><%= picture.name %></td>
-        <td><%= picture.image %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
 <br>
-
 <%= link_to 'New Picture', new_picture_path %>
+<hr>
+
+<div class="container">
+  <div class="row">
+    <% @pictures.each do |picture| %>
+      <div class="col-lg-3">
+        <%= image_tag picture.image.thumb250, class:"img-responsive" %>
+        <strong><%= picture.name %></strong>
+        <div class="btn-group" role="group" aria-label="Image options">
+          <%= link_to 'Show', picture, class: "btn btn-secondary btn-outline-success" %>
+          <%= link_to 'Edit', edit_picture_path(picture), class: "btn btn-secondary btn-outline-warning" %>
+          <%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary btn-outline-danger" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

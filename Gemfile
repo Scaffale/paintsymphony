@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'lockup'
 gem 'carrierwave'
+gem 'mini_magick'
 group :development, :test do
   gem 'byebug'
 end
