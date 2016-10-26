@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  get 'data/settings'
+  get 'data/manage'
   resources :musics
   resources :pictures
-  mount Lockup::Engine, at: 'data/settings'
   resources :sessions
   root to: 'visitors#index'
-  get '/data/settings'
-  get '/data/manage'
+  mount Lockup::Engine, at: '/data/settings'
+  
 end

@@ -3,4 +3,7 @@ class DataController < ApplicationController
 	
 	def settings
 	end
+
+	def manage
+	end
 end

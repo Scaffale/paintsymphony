@@ -1,5 +1,6 @@
 class MusicsController < ApplicationController
   before_action :set_music, only: [:show, :edit, :update, :destroy]
+  before_action :check_for_lockup
 
   # GET /musics
   # GET /musics.json
