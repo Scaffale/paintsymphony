@@ -1,11 +1,24 @@
-<p>
-  <strong>Name:</strong>
-  <%= @picture.name %>
-</p>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="btn-group" role="group" aria-label="Image options">
+			<%= link_to 'Edit', edit_picture_path(@picture), class: 'btn btn-secondary btn-outline-success' %>
+				<%= link_to 'Back', pictures_path, class: 'btn btn-secondary btn-outline-warning' %>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-lg-4">
+			<h4>
+				<small>Name:</small>
+				<%= @picture.name %>
+			</h4>
+		</div>
+		<div class="col-lg-12">
+			<%= image_tag @picture.image, class: 'img-responsive' %>
+		</div>
+	</div>
+</div>
 
-<p>
-  <%= image_tag @picture.image %>
-</p>
 
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
