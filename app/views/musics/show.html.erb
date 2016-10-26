@@ -1,14 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="btn-group" role="group" aria-label="Music options">
+				<%= link_to 'Edit', edit_music_path(@music), class: 'btn btn-secondary btn-outline-success' %>
+				<%= link_to 'Back', musics_path, class: 'btn btn-secondary btn-outline-warning' %>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-lg-4">
+			<h4>
+				<small>Name:</small>
+				<%= @music.name %>
+			</h4>
+		</div>
+		<div class="col-lg-4 offset-lg-1">
+			<%= audio_tag @music.sound, controls:true, style:"width:300px;" %>
+			</div>		
 
-<p>
-  <strong>Name:</strong>
-  <%= @music.name %>
-</p>
-
-<p>
-  <strong>Sound:</strong>
-  <%= @music.sound %>
-</p>
-
-<%= link_to 'Edit', edit_music_path(@music) %> |
-<%= link_to 'Back', musics_path %>
+	</div>
+</div>
