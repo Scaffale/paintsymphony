@@ -48,4 +48,12 @@ class SoundUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
+  def extension
+    @filenamesplitted = file.file.split('.')
+    if @filenamesplitted.count > 1
+      @filenamesplitted.last
+    else
+        ''
+    end
+  end
 end

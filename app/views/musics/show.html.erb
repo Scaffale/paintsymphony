@@ -16,8 +16,8 @@
 			</h4>
 		</div>
 		<div class="col-lg-4 offset-lg-1">
-			<%= audio_tag @music.sound, controls:true, style:"width:300px;" %>
-			</div>		
+			<%= audio_tag @music.sound, controls:true, style:"width:300px;", preload:'metadata', type: "audio/#{@music.sound.extension}" %>
+		</div>
 
 	</div>
 </div>
