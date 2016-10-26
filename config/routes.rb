@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :musics
   resources :pictures
   mount Lockup::Engine, at: 'data/settings'
   resources :sessions
