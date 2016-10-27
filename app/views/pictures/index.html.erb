@@ -6,15 +6,23 @@
 <div class="container">
   <div class="row">
     <% @pictures.each do |picture| %>
-      <div class="col-lg-3">
-        <%= image_tag picture.image.thumb250, class:"img-responsive" %>
-        <strong><%= picture.name %></strong>
-        <div class="btn-group" role="group" aria-label="Image options">
-          <%= link_to 'Show', picture, class: "btn btn-secondary btn-outline-success" %>
-          <%= link_to 'Edit', edit_picture_path(picture), class: "btn btn-secondary btn-outline-warning" %>
-          <%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary btn-outline-danger" %>
+    <div class="col-lg-3">
+      <div class="card">
+        <%= image_tag picture.image.thumb250, class:"card-img-top" %>
+        <div class="card-block">
+          <h5 class="card-title">
+            <%= picture.name %>
+          </h5>
+          <div class="btn-group" role="group" aria-label="Image options">
+            <%= link_to 'Show', picture, class: "btn btn-secondary btn-outline-success" %>
+            <%= link_to 'Edit', edit_picture_path(picture), class: "btn btn-secondary btn-outline-warning" %>
+          </div>
+        </div>
+        <div class="card-block">
+          <%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
         </div>
       </div>
+    </div>
     <% end %>
   </div>
 </div>
