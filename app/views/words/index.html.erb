@@ -1,8 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Words</h1>
+<br>
+<%= link_to 'New Word', new_word_path, class: 'btn btn-outline-info' %>
+<hr>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Left</th>
@@ -13,17 +14,20 @@
 
   <tbody>
     <% @words.each do |word| %>
-      <tr>
-        <td><%= word.left %></td>
-        <td><%= word.right %></td>
-        <td><%= link_to 'Show', word %></td>
-        <td><%= link_to 'Edit', edit_word_path(word) %></td>
-        <td><%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= word.left %></td>
+      <td><%= word.right %></td>
+      <td>
+        <div class="btn-group" role="group" aria-label="Music options">
+          <%= link_to 'Show', word, class: "btn btn-secondary btn-outline-success" %>
+          <%= link_to 'Edit', edit_word_path(word), class: "btn btn-secondary btn-outline-warning" %>
+          <%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary btn-outline-danger" %>
+        </div>
+      </td>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Word', new_word_path %>
