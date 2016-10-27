@@ -37,6 +37,7 @@ Documentation and Support
 
 Issues
 -------------
+Because of the audio tag it works better on Firefox.
 
 Similar Projects
 ----------------
