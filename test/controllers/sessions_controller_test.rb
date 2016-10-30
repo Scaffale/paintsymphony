@@ -21,5 +21,4 @@ class SessionsControllerTest < ActionController::TestCase
   	assert_not_same(@sessione1.id, @sessione2.id, "Sessione 1 & 2 has same id")
   end
 
-  
 end

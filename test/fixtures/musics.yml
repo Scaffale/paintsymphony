@@ -1,0 +1,6 @@
+music_one:
+  name: NomePrimaMusica
+  sound: SuonoUno
+music_two:
+  name: NomeSecondaMusica
+  sound: SuonoDue

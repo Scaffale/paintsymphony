@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027150907) do
+ActiveRecord::Schema.define(version: 20161028151654) do
 
   create_table "musics", force: :cascade do |t|
     t.string   "name"
@@ -24,12 +24,24 @@ ActiveRecord::Schema.define(version: 20161027150907) do
     t.integer  "mark"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "phase_id"
+    t.integer  "word_id"
   end
+
+  add_index "opinions", ["phase_id"], name: "index_opinions_on_phase_id"
+  add_index "opinions", ["word_id"], name: "index_opinions_on_word_id"
 
   create_table "phases", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "session_id"
+    t.integer  "picture_id"
+    t.integer  "music_id"
   end
+
+  add_index "phases", ["music_id"], name: "index_phases_on_music_id"
+  add_index "phases", ["picture_id"], name: "index_phases_on_picture_id"
+  add_index "phases", ["session_id"], name: "index_phases_on_session_id"
 
   create_table "pictures", force: :cascade do |t|
     t.string   "name"
