@@ -1,4 +1,9 @@
-<p id="notice"><%= notice %></p>
-
+<%= @session.name %>
+<br>
+<!-- il %= causa la stampa dell'array -->
+<%= @session.phases.all.each do |phase| %>
+	<%= phase.id %>
+	<br>
+<% end %>
 <%= link_to 'Edit', edit_session_path(@session) %> |
 <%= link_to 'Back', sessions_path %>

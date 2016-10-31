@@ -1,4 +1,4 @@
 class Opinion < ActiveRecord::Base
-	belongs_to :Phase
-	has_one :Word
+	belongs_to :phase
+	has_one :word
 end

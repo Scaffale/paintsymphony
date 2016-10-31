@@ -4,7 +4,7 @@ require 'test/unit'
 class SessionsControllerTest < ActionController::TestCase
 
 	test "session should have a phase" do
-		assert_not_nil(@sessione1.Phases, "Sessione1 has no phase")
+		assert_not_nil(@sessione1.phases, "Sessione1 has no phase")
 	end
 
 	test "check YML pictures" do
@@ -18,12 +18,8 @@ class SessionsControllerTest < ActionController::TestCase
 	test "create_Phases should create N elements" do
 		pic = pictures(:number_one)
 		assert_not_nil(pic, "Problem with YML file")
-		assert_same(Picture.count + Music.count, @sessione1.create_Phases)
-		assert_same(4, @sessione1.create_Phases)
+		assert_same(Picture.count + Music.count, @sessione1.create_Phases.count)
+		assert_same(4, @sessione1.create_Phases.count)
 	end
-
-	# test "create_Phases should create one phase with one picture" do
-	# 	assert_same(Picture.first.id, @sessione1.Phases.first.Picture.id)
-	# end
 
 end

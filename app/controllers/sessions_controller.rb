@@ -28,6 +28,7 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.save
+        @session.create_Phases
         format.html { redirect_to @session, notice: 'Session was successfully created.' }
         format.json { render :show, status: :created, location: @session }
       else
@@ -69,6 +70,6 @@ class SessionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def session_params
-      params.fetch(:session, {})
+      params.fetch(:session, {}).permit(:name)
     end
 end
