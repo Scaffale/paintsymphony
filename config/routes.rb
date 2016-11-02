@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :pictures
   resources :sessions
   resources :phases
+  resources :opinions
+  post 'phases/update_mark'
   root to: 'visitors#index'
   mount Lockup::Engine, at: '/data/settings'
   

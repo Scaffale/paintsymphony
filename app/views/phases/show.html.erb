@@ -4,3 +4,14 @@
 	<%= image_tag @phase.picture.image, class: 'img-responsive' %>
 <% end %>
 
+<% @phase.opinions.all.each do |opinion| %>
+	<% unless opinion.mark %>
+		<%= form_for(opinion) do |f| %>
+			<%= opinion.word.left %>
+			<%= f.range_field :mark, :min=>0, :max=>100, :class=>"slide", :id=>"slider1"%>
+			<%= opinion.word.right %>
+		    <%= f.submit 'Confirm' %>			
+		<% end %>
+		<% break %>
+	<% end %>
+<% end %>
