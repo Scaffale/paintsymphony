@@ -21,8 +21,8 @@ class SessionsControllerTest < ActionController::TestCase
   	assert_not_same(@sessione1.id, @sessione2.id, "Sessione 1 & 2 has same id")
   end
 
-  test "create sessions should create also phases" do
-    @ses = Session.create
-    assert_not_same(0, @ses.phases.count, "Session 1 has no phases")
-  end
+  # test "create sessions should create also phases" do
+  #   @ses = Session.create
+  #   assert_not_same(0, @ses.phases.count, "Session 1 has no phases")
+  # end
 end

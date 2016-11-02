@@ -1,6 +1,7 @@
 class Session < ActiveRecord::Base
 	has_many :phases, dependent: :destroy
 	has_many :opinions, through: :phases
+	after_create :create_Phases
 
 	def create_Phases
 		self.phases.clear

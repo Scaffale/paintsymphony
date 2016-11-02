@@ -28,7 +28,6 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @session.save
-        @session.create_Phases
         format.html { redirect_to @session, notice: 'Session was successfully created.' }
         format.json { render :show, status: :created, location: @session }
       else
