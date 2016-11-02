@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :musics
   resources :pictures
   resources :sessions
+  resources :phases
   root to: 'visitors#index'
   mount Lockup::Engine, at: '/data/settings'
   
