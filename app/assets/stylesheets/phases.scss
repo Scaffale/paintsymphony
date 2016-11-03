@@ -1,3 +1,48 @@
 // Place all the styles related to the phases controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.phase-background {
+	background-color: #000;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.img-phase {
+	position: absolute;
+	height: auto;
+	top: 5%;
+	left: 16px;
+	max-width: 65%;
+	max-height: 90%;
+}
+
+.audio-phase {
+	position: absolute;
+	top: 45%;
+	left: 5%;
+}
+
+.phase-controller {
+	position: absolute;
+	top: 45%;
+	right: 12px;
+	color: #fff;
+}
+
+.slide {
+	width: 300px;
+}
+
+.btn-confirm-phase {
+	margin-top: 35px;
+	margin-left: 41%;
+}
+
+.word {
+	margin-left: 10px;
+	margin-right: 10px;
+}

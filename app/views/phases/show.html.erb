@@ -1,17 +1,22 @@
-<% unless @phase.picture %>
-	<%= audio_tag @phase.music.sound, controls:true, style:"width:300px;", preload:'metadata', type: "audio/#{@phase.music.sound.extension}" %>
-<% else %>
-	<%= image_tag @phase.picture.image, class: 'img-responsive' %>
-<% end %>
-
-<% @phase.opinions.all.each do |opinion| %>
-	<% unless opinion.mark %>
-		<%= form_for(opinion) do |f| %>
-			<%= opinion.word.left %>
-			<%= f.range_field :mark, :min=>0, :max=>100, :class=>"slide", :id=>"slider1"%>
-			<%= opinion.word.right %>
-		    <%= f.submit 'Confirm' %>			
-		<% end %>
-		<% break %>
+<div class="phase-background">
+	<% unless @phase.picture %>
+		<%= audio_tag @phase.music.sound, controls:true, style:"width:300px;", preload:'metadata', type: "audio/#{@phase.music.sound.extension}", class: 'audio-phase' %>
+	<% else %>
+		<%= image_tag @phase.picture.image, class: 'img-phase' %>
 	<% end %>
-<% end %>
+
+	<div class="phase-controller">
+		<% @phase.opinions.all.each do |opinion| %>
+			<% unless opinion.mark %>
+				<%= form_for(opinion) do |f| %>
+					<span class="word"><%= opinion.word.left %></span>
+					<%= f.range_field :mark, :min=>0, :max=>100, :class=>"slide", :id=>"slider1"%>
+					<span class="word"><%= opinion.word.right %></span>
+					<br>
+				    <%= f.submit 'Confirm', :class => 'btn btn-secondary btn-sm btn-confirm-phase' %>
+				<% end %>
+				<% break %>
+			<% end %>
+		<% end %>
+	</div>
+</div>
