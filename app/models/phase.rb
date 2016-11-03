@@ -8,7 +8,9 @@ class Phase < ActiveRecord::Base
 
 	def define_words
 		self.opinions.clear
-		Word.all.each do |word|
+		@data_to_shuffle = Word.all
+		@shuffled_data = @data_to_shuffle.shuffle
+		@shuffled_data.each do |word|
 			self.opinions.create(word: word)
 		end
 	end

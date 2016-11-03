@@ -5,12 +5,16 @@ class Session < ActiveRecord::Base
 
 	def create_Phases
 		self.phases.clear
-		Picture.all.each do |existing_picture|
+		@data_to_shuffle = Picture.all
+		@shuffled_data = @data_to_shuffle.shuffle
+		@shuffled_data.each do |existing_picture|
 			self.phases.create(picture: existing_picture)
 		end
-		Music.all.each do |existing_music|
+
+		@data_to_shuffle = Music.all
+		@shuffled_data = @data_to_shuffle.shuffle
+		@shuffled_data.each do |existing_music|
 			self.phases.create(music: existing_music)
 		end
-		# self.phases
 	end
 end
