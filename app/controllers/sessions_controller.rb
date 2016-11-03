@@ -10,6 +10,14 @@ class SessionsController < ApplicationController
   # GET /sessions/1
   # GET /sessions/1.json
   def show
+    unless @session.phases.last.opinions.last.mark
+      @session.phases.all.each do |phase|
+        unless phase.opinions.last.mark
+          redirect_to phase
+          break
+        end
+      end
+    end
   end
 
   # GET /sessions/new

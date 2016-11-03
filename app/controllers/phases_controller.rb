@@ -4,6 +4,9 @@ class PhasesController < ApplicationController
 	# GET /phase/1
 	# GET /phase/1.json
 	def show
+		if @phase.opinions.last.mark
+		 	redirect_to @phase.session
+		end 
 	end
 
 	# # PATCH/PUT /phase/1

@@ -16,7 +16,7 @@
 		</div>
 	</div>
 
-	<table class="table table-hover">
+	<table class="table">
 		<thead>
 			<tr>
 				<th>Picture / Music</th>
@@ -44,7 +44,7 @@
 										<li class="list-group-item">
 											<%= opinion.word.left %>
 											<% unless opinion.mark %>
-												Mark missing
+												<strong>??</strong>
 											<% else %>
 												<strong><%= opinion.mark %></strong>
 											<% end %>
@@ -60,5 +60,3 @@
 		</tbody>
 	</table>
 </div>
-
-
