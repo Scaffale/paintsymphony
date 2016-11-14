@@ -1,8 +1,9 @@
 class Session < ActiveRecord::Base
 	has_many :phases, dependent: :destroy
 	has_many :opinions, through: :phases
+	has_many :finalphases, dependent: :destroy
 	after_create :create_Phases
-
+	
 	def create_Phases
 		self.phases.clear
 		@data_to_shuffle = Picture.all
