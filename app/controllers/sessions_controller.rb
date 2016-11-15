@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
   # GET /sessions/1
   # GET /sessions/1.json
   def show
+    # Redirect to phase se l'ultima fase non ha opinione
     unless @session.phases.last.opinions.last.mark
       @session.phases.all.each do |phase|
         unless phase.opinions.last.mark
@@ -18,6 +19,8 @@ class SessionsController < ApplicationController
         end
       end
     end
+    # Redirect to finalphase
+    redirect_to @session.finalphases.first
   end
 
   # GET /sessions/new

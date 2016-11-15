@@ -27,4 +27,8 @@ class SessionsControllerTest < ActionController::TestCase
 	test "session should have finalphase" do
 		assert_equal(Session.create().finalphases.count, Music.count)
 	end
+
+	test "finalphase should have a music" do
+		assert_not_nil(Session.create().finalphases.first.music)
+	end
 end

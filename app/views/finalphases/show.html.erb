@@ -1,0 +1,16 @@
+<div class="phase-background">
+	<div class="final-left col-md-7">
+		<div class="row">
+			<% Picture.all.each do |picture| %>
+				<div class="col-md-4">
+					<%= image_tag picture.image %>					
+				</div>
+			<% end %>	
+		</div>
+	</div>
+	<div class="col-md-5">
+		<div class="phase-controller">
+			<%= audio_tag @finalphase.music.sound, controls:true, style:"width:300px;", preload:'metadata', type: "audio/#{@finalphase.music.sound.extension}", class: '-audio-phase' %>
+		</div>
+	</div>
+</div>
