@@ -3,4 +3,5 @@ class Music < ActiveRecord::Base
 	validates :name,  presence: true
 	validates :sound, presence: true
 	has_many :phases
+	has_many :finalphases
 end
