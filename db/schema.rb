@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114173255) do
+ActiveRecord::Schema.define(version: 20161115153305) do
 
   create_table "finalphases", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "session_id"
+    t.integer  "pictures_id"
+    t.integer  "music_id"
   end
+
+  add_index "finalphases", ["music_id"], name: "index_finalphases_on_music_id"
+  add_index "finalphases", ["pictures_id"], name: "index_finalphases_on_pictures_id"
+  add_index "finalphases", ["session_id"], name: "index_finalphases_on_session_id"
 
   create_table "musics", force: :cascade do |t|
     t.string   "name"
