@@ -24,4 +24,7 @@ class SessionsControllerTest < ActionController::TestCase
 	# 	assert_same(4, @sessione1.create_Phases.phases.count)
 	# end
 
+	test "session should have finalphase" do
+		assert_equal(Session.create().finalphases.count, Music.count)
+	end
 end
