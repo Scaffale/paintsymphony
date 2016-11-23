@@ -2,15 +2,21 @@
 	<div class="final-left col-md-7">
 		<div class="row">
 			<% Picture.all.each do |picture| %>
-				<div class="col-md-4">
-					<%= image_tag picture.image %>					
+				<div class="col-md-3 picture-finalphase">
+					<%= image_tag picture.image.thumb250 %>					
 				</div>
 			<% end %>	
 		</div>
 	</div>
 	<div class="col-md-5">
-		<div class="phase-controller">
-			<%= audio_tag @finalphase.music.sound, controls:true, style:"width:300px;", preload:'metadata', type: "audio/#{@finalphase.music.sound.extension}", class: '-audio-phase' %>
+		<div class="finalphase-controller">
+			<div class="large-hover-image">
+				<%= image_tag 'assets/rectangle.jpg' %>
+			</div>
+			<div class="small-three">
+				
+			</div>
+			<%= audio_tag @finalphase.music.sound, controls:true, style:"width:300px;", preload:'metadata', type: "audio/#{@finalphase.music.sound.extension}", class: 'audio-finalphase' %>
 		</div>
 	</div>
 </div>
