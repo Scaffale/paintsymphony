@@ -1,22 +1,27 @@
 <div class="phase-background">
 	<div class="final-left col-md-7">
-		<div class="row">
-			<% Picture.all.each do |picture| %>
-				<div class="col-md-3 picture-finalphase">
-					<%= image_tag picture.image.thumb250 %>					
-				</div>
-			<% end %>	
+		<div class="large-hover-image">
+			<%= image_tag 'rectangle.jpg', id:'image-big-finalphase' %>
 		</div>
 	</div>
 	<div class="col-md-5">
+		<div class="">
+			<% Picture.all.each do |picture| %>
+				<div class="col-md-3">
+					<%= image_tag picture.image, class:'picture-finalphase draggable', id:picture.id, draggable:'true' %>					
+				</div>
+			<% end %>	
+		</div>
 		<div class="finalphase-controller">
-			<div class="large-hover-image">
-				<%= image_tag 'assets/rectangle.jpg' %>
-			</div>
+			<!-- TODO: Edit with: thumb100 -->
 			<div class="small-three">
-				
+				<%= image_tag 'rectangle.jpg', class:'finalphase-choice', id:'first-choice', alt:'0' %>
+				<%= image_tag 'rectangle.jpg', class:'finalphase-choice', id:'second-choice', alt:'0' %>
+				<%= image_tag 'rectangle.jpg', class:'finalphase-choice', id:'third-choice', alt:'0' %>
 			</div>
 			<%= audio_tag @finalphase.music.sound, controls:true, style:"width:300px;", preload:'metadata', type: "audio/#{@finalphase.music.sound.extension}", class: 'audio-finalphase' %>
+			<button class='btn btn-secondary btn-sm btn-confirm-finalphase' disabled="false" id="confirm-choice">Conferma</button>
+			<% debugger %>
 		</div>
 	</div>
 </div>

@@ -2,6 +2,7 @@ class Session < ActiveRecord::Base
 	has_many :phases, dependent: :destroy
 	has_many :opinions, through: :phases
 	has_many :finalphases, dependent: :destroy
+	has_many :finalopinions, through: :finalphases
 
 	after_create :create_Phases
 	

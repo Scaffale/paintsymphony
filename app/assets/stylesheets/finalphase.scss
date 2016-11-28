@@ -2,16 +2,49 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.audio-finalphase {
-	position: fixed;
-	bottom: 20%;
-	right: 10%;
-}
-
 .finalphase-controller {
 	position: fixed;
+	height: 35%;
+	top: 65%;
+	right: 5%;
+}
+
+.audio-finalphase {
+	position: relative;
+	top: 30px;
+	left: 20px;
 }
 
 .picture-finalphase {
 	padding-top: 12px;
+}
+
+#image-big-finalphase {
+	position: relative;
+	// max-width: 90%;
+	// width: 100%;
+	height: auto;
+	// TODO: redefine in px
+	max-height: 90%;
+	top: 15px;
+	// left: 5%;
+}
+
+.small-three {
+	position: relative;
+	top: 15px;
+	left: 5%;
+	margin-bottom: 15px;
+}
+
+.finalphase-choice {
+	position: relative;
+	top:10px;
+	padding-right: 9px;
+	max-width: 100px;
+}
+
+.btn-confirm-finalphase {
+	margin-top: 35px;
+	margin-left: 33%;
 }
