@@ -19,8 +19,14 @@ class SessionsController < ApplicationController
         end
       end
     end
-    # Redirect to finalphase
-    redirect_to @session.finalphases.first
+    if @session.phases.last.opinions.last.mark
+      @session.finalphases.all.each do |finalphase|
+        unless finalphase.finalopinion
+          redirect_to finalphase
+          break
+        end
+      end
+    end
   end
 
   # GET /sessions/new

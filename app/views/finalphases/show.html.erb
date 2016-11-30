@@ -13,7 +13,6 @@
 			<% end %>	
 		</div>
 		<div class="finalphase-controller">
-			<!-- TODO: Edit with: thumb100 -->
 			<div class="small-three">
 				<%= image_tag 'rectangle.jpg', class:'finalphase-choice', id:'first-choice', alt:'0' %>
 				<%= image_tag 'rectangle.jpg', class:'finalphase-choice', id:'second-choice', alt:'0' %>
@@ -21,7 +20,14 @@
 			</div>
 			<%= audio_tag @finalphase.music.sound, controls:true, style:"width:300px;", preload:'metadata', type: "audio/#{@finalphase.music.sound.extension}", class: 'audio-finalphase' %>
 			<button class='btn btn-secondary btn-sm btn-confirm-finalphase' disabled="false" id="confirm-choice">Conferma</button>
-			<% debugger %>
+			<%= form_for Finalopinion.new(finalphase: @finalphase, music: @finalphase.music) do |f| %>
+				<%= f.hidden_field :pictures0, :value => '1', id: 'first-choice-text' %>
+				<%= f.hidden_field :pictures1, :value => '1', id: 'second-choice-text' %>
+				<%= f.hidden_field :pictures2, :value => '1', id: 'third-choice-text' %>
+				<%= f.hidden_field :music, value: @finalphase.music.id %>
+				<%= f.hidden_field :finalphase, value: @finalphase.id %>
+				<%= f.submit 'Confirm' %>
+			<% end %>
 		</div>
 	</div>
 </div>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :phases
   resources :finalphases
   resources :opinions
+  resources :finalopinions
   post 'phases/update_mark'
   root to: 'visitors#index'
   mount Lockup::Engine, at: '/data/settings'

@@ -11,18 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161115153305) do
+ActiveRecord::Schema.define(version: 20161129145254) do
+
+  create_table "finalopinions", force: :cascade do |t|
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "finalphase_id"
+    t.integer  "music_id"
+  end
+
+  add_index "finalopinions", ["finalphase_id"], name: "index_finalopinions_on_finalphase_id"
+  add_index "finalopinions", ["music_id"], name: "index_finalopinions_on_music_id"
+
+  create_table "finalopinions_pictures", id: false, force: :cascade do |t|
+    t.integer "finalopinion_id"
+    t.integer "picture_id"
+  end
+
+  add_index "finalopinions_pictures", ["finalopinion_id"], name: "index_finalopinions_pictures_on_finalopinion_id"
+  add_index "finalopinions_pictures", ["picture_id"], name: "index_finalopinions_pictures_on_picture_id"
 
   create_table "finalphases", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "session_id"
-    t.integer  "pictures_id"
     t.integer  "music_id"
   end
 
   add_index "finalphases", ["music_id"], name: "index_finalphases_on_music_id"
-  add_index "finalphases", ["pictures_id"], name: "index_finalphases_on_pictures_id"
   add_index "finalphases", ["session_id"], name: "index_finalphases_on_session_id"
 
   create_table "musics", force: :cascade do |t|
