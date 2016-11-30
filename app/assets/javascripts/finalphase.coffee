@@ -10,6 +10,7 @@ $(document).ready ->
 document.addEventListener 'dragstart', (event) ->
 	event.dataTransfer.setData 'id', event.target.id
 	event.dataTransfer.setData 'src', event.target.src
+	event.dataTransfer.setData 'class', event.target.className
 	event.target.style.opacity = '0.4'
 	return
 
@@ -36,9 +37,9 @@ document.addEventListener 'dragleave', (event) ->
 	return
 
 checkButton = ->
-	primo = document.getElementById('first-choice').alt
-	secondo = document.getElementById('second-choice').alt
-	terzo = document.getElementById('third-choice').alt
+	primo = document.getElementById('first-choice-text').value
+	secondo = document.getElementById('second-choice-text').value
+	terzo = document.getElementById('third-choice-text').value
 	if primo != '0' and secondo != '0' and terzo != '0'
 		document.getElementById('confirm-choice').disabled = false
 	else
@@ -60,16 +61,26 @@ checkPresence = (id, element) ->
 		document.getElementById('third-choice').alt = element.alt
 	return
 
+addValue = (idName, id) ->
+	if idName == 'first-choice'
+		document.getElementById('first-choice-text').value = id
+	if idName == 'second-choice'
+		document.getElementById('second-choice-text').value = id
+	if idName == 'third-choice'
+		document.getElementById('third-choice-text').value = id
+	return
 
 document.addEventListener 'drop', (event) ->
 	event.preventDefault()
-	if event.target.className == 'finalphase-choice'
-		id = event.dataTransfer.getData('id')
-		src = event.dataTransfer.getData('src')
-		checkPresence(id, event.target)
-		event.target.alt = id
-		event.target.src = src
-		event.target.style.opacity = '1'
-		checkButton()
+	if event.dataTransfer.getData('class') == 'picture-finalphase draggable'	
+		if event.target.className == 'finalphase-choice'
+			id = event.dataTransfer.getData('id')
+			src = event.dataTransfer.getData('src')
+			checkPresence(id, event.target)
+			event.target.alt = id
+			event.target.src = src
+			addValue(event.target.id, id)
+			checkButton()
+	event.target.style.opacity = '1'
 	return
 	

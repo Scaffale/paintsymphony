@@ -19,14 +19,13 @@
 				<%= image_tag 'rectangle.jpg', class:'finalphase-choice', id:'third-choice', alt:'0' %>
 			</div>
 			<%= audio_tag @finalphase.music.sound, controls:true, style:"width:300px;", preload:'metadata', type: "audio/#{@finalphase.music.sound.extension}", class: 'audio-finalphase' %>
-			<button class='btn btn-secondary btn-sm btn-confirm-finalphase' disabled="false" id="confirm-choice">Conferma</button>
 			<%= form_for Finalopinion.new(finalphase: @finalphase, music: @finalphase.music) do |f| %>
-				<%= f.hidden_field :pictures0, :value => '1', id: 'first-choice-text' %>
-				<%= f.hidden_field :pictures1, :value => '1', id: 'second-choice-text' %>
-				<%= f.hidden_field :pictures2, :value => '1', id: 'third-choice-text' %>
+				<%= f.hidden_field :pictures0, :value => '0', id: 'first-choice-text' %>
+				<%= f.hidden_field :pictures1, :value => '0', id: 'second-choice-text' %>
+				<%= f.hidden_field :pictures2, :value => '0', id: 'third-choice-text' %>
 				<%= f.hidden_field :music, value: @finalphase.music.id %>
 				<%= f.hidden_field :finalphase, value: @finalphase.id %>
-				<%= f.submit 'Confirm' %>
+				<%= f.submit 'Confirm', class: 'btn btn-secondary btn-sm btn-confirm-finalphase',  disabled: 'false', id: 'confirm-choice' %>
 			<% end %>
 		</div>
 	</div>

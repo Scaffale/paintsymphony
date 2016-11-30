@@ -6,14 +6,11 @@ class FinalopinionsController < ApplicationController
 		@finalopinion = Finalopinion.create
 		@finalopinion.finalphase = Finalphase.find(params[:finalopinion][:finalphase])
 		@finalopinion.music      = Music.find(params[:finalopinion][:music])
-		debugger
-		@finalopinion.pictures   = [Picture.find(params[:finalopinion][:pictures1]), Picture.find(params[:finalopinion][:pictures2])]
-		debugger
+		@finalopinion.pictures   = [Picture.find(params[:finalopinion][:pictures0]), Picture.find(params[:finalopinion][:pictures1]), Picture.find(params[:finalopinion][:pictures2])]
 
 		if @finalopinion.save
 			redirect_to :back
 		else
-			debugger
 			redirect_to :back
 		end
 	end

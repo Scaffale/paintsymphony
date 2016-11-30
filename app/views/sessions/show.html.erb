@@ -11,11 +11,11 @@
 	<div class="row">
 		<div class="col-lg-4">
 			<h3>
-				<%= @session.name %>
+				Name: <%= @session.name %>
 			</h3>
 		</div>
 	</div>
-
+	<h6>First half</h6>
 	<table class="table">
 		<thead>
 			<tr>
@@ -49,6 +49,42 @@
 												<strong><%= opinion.mark %></strong>
 											<% end %>
 											<%= opinion.word.right %>
+										</li>
+									<% end %>
+								</ul>
+							</div>
+						</div>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<h6>Second half</h6>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Music</th>
+				<th>Opinions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @session.finalphases.all.each do |phase| %>
+				<tr>
+					<td>
+						Music name = <strong><%= phase.music.name %></strong>
+					</td>
+					<td>
+						<button class="btn btn-outline-info btn-sm" type="button" data-toggle="collapse" data-target="#collapse<%= phase.id %>"" aria-expanded="false" aria-controls="collapse<%= phase.id %>"">
+							Show all opinions
+						</button>
+						<div class="collapse" id="collapse<%= phase.id %>">
+							<div class="card">
+								<ul class="list-group list-group-flush">
+									<% phase.finalopinion.pictures.each do |picture| %>
+										<li class="list-group-item">
+											<% if picture %>
+												<strong><%= picture.name %></strong>
+											<% end %>
 										</li>
 									<% end %>
 								</ul>

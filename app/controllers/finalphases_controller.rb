@@ -5,7 +5,6 @@ class FinalphasesController < ApplicationController
 	# GET /phase/1.json
 	def show
 		if @finalphase.finalopinion
-		 	debugger
 		 	redirect_to @finalphase.session
 		end 
 	end
