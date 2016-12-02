@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :words
   resources :musics
   resources :pictures
+  get "/sessions/download_all" => "sessions#download_all", as: 'download_all_session'
   resources :sessions
+  get "/sessions/:id/download" => "sessions#download", as: 'download_session'
   resources :phases
   resources :finalphases
   resources :opinions

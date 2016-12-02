@@ -1,10 +1,15 @@
 class SessionsController < ApplicationController
-  before_action :set_session, only: [:show, :edit, :update, :destroy]
+  before_action :set_session, only: [:show, :edit, :update, :destroy, :download]
 
   # GET /sessions
   # GET /sessions.json
   def index
     @sessions = Session.all
+  end
+
+  # GET /session/download
+  def download_all
+    send_data Session.to_csv, filename: "Sessioni.csv", :type=>"application/csv", :x_sendfile=>true
   end
 
   # GET /sessions/1
@@ -36,6 +41,11 @@ class SessionsController < ApplicationController
 
   # GET /sessions/1/edit
   def edit
+  end
+
+  # GET /sessions/1/download
+  def download
+    send_data @session.to_csv, filename: "Sessione #{@session.id} #{@session.name}.csv", :type=>"application/csv", :x_sendfile=>true
   end
 
   # POST /sessions

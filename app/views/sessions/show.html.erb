@@ -3,6 +3,7 @@
 		<div class="col-lg-5">
 			<div class="btn-group" role="group" aria-label="Setting options">
 				<%= link_to 'Edit', edit_session_path(@session), class: "btn btn-secondary btn-outline-success" %>
+				<%= link_to 'Download', download_session_path(@session), class: "btn btn-secondary btn-outline-info" %>
 				<%= link_to 'Back', sessions_path, class: "btn btn-secondary btn-outline-warning" %>
 			</div>
 		</div>
@@ -83,7 +84,7 @@
 									<% phase.finalopinion.pictures.each_with_index do |picture, i| %>
 										<li class="list-group-item">
 											<% if picture %>
-												<strong><%= picture.name %></strong> <%= i %>
+												<strong><%= picture.name %></strong>
 											<% end %>
 										</li>
 									<% end %>
