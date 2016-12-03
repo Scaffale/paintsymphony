@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :set_session, only: [:show, :edit, :update, :destroy, :download]
+  before_action :set_session, only: [:show, :edit, :update, :destroy, :download, :pause]
 
   # GET /sessions
   # GET /sessions.json
@@ -25,6 +25,10 @@ class SessionsController < ApplicationController
       end
     end
     if @session.phases.last.opinions.last.mark
+      unless @session.finalphases.first.finalopinion
+        render :pause
+        return
+      end
       @session.finalphases.all.each do |finalphase|
         unless finalphase.finalopinion
           redirect_to finalphase
@@ -32,6 +36,10 @@ class SessionsController < ApplicationController
         end
       end
     end
+  end
+
+  def pause
+    
   end
 
   # GET /sessions/new

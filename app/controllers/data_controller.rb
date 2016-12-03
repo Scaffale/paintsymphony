@@ -6,4 +6,5 @@ class DataController < ApplicationController
 
 	def manage
 	end
+
 end
