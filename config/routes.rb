@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'data/settings'
   get 'data/manage'
-  # get '/data/pause/:id' => "data#pause", as 'pause_session'
   resources :words
   resources :musics
   resources :pictures
