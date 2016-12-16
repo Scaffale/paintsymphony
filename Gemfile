@@ -49,5 +49,5 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
-  gem "test-unit"
+  gem 'test-unit'
 end
