@@ -153,7 +153,6 @@ GEM
       shellany (~> 0.0)
     parser (2.3.1.4)
       ast (~> 2.2)
-    pg (0.19.0)
     power_assert (0.3.1)
     powerpack (0.1.1)
     pry (0.10.4)
@@ -303,7 +302,6 @@ DEPENDENCIES
   launchy
   lockup
   mini_magick
-  pg
   pry-rails
   pry-rescue
   rails (= 4.2.5)
