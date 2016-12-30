@@ -4,7 +4,13 @@
 	<% else %>
 		<%= image_tag @phase.picture.image, class: 'img-phase' %>
 	<% end %>
-
+	<div class="row">
+		<div class="col-lg-3 offset-lg-8">
+			<div class="istruzioni text-lg-center">
+				<p>Sposta il pallino vicino alla parola di destra o di sinistra a seconda dell'opera che vedi/senti</p>
+			</div>
+		</div>
+	</div>
 	<div class="phase-controller">
 		<% @phase.opinions.all.each do |opinion| %>
 			<% unless opinion.mark %>
