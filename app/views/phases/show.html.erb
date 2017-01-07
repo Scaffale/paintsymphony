@@ -17,11 +17,11 @@
 				<%= form_for(opinion) do |f| %>
 					<% if Random.new().rand > 0.5 %>
 						<span class="word"><%= opinion.word.left %></span>
-						<%= f.range_field :mark, :min=>1, :max=>101, :class=>"slide", :id=>"slider1"%>
+						<%= f.range_field :mark, :min=>0, :max=>100, :class=>"slide", :id=>"slider1"%>
 						<span class="word"><%= opinion.word.right %></span>
 					<% else %>
 						<span class="word"><%= opinion.word.right %></span>
-						<%= f.range_field :mark, :min=>-101, :max=>-1, :class=>"slide", :id=>"slider1"%>
+						<%= f.range_field :mark, :min=>-100, :max=>0, :class=>"slide", :id=>"slider1"%>
 						<span class="word"><%= opinion.word.left %></span>
 					<% end %>
 					<br>
