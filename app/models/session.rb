@@ -32,11 +32,21 @@ class Session < ActiveRecord::Base
 				session.phases.each do |phase|
 					if phase.picture
 						phase.opinions.each do |opinion|
-							csv << [session.id, session.name, session.created_at, phase.id, phase.picture.id, phase.picture.name, '', '', opinion.word.id, opinion.word.left, opinion.word.right, opinion.mark, opinion.updated_at]
+							if opinion.mark > 0
+								csv << [session.id, session.name, session.created_at, phase.id, phase.picture.id, phase.picture.name, '', '', opinion.word.id, opinion.word.left, opinion.word.right, opinion.mark, opinion.updated_at]
+							else
+								@mark = opinion.mark * -1
+								csv << [session.id, session.name, session.created_at, phase.id, phase.picture.id, phase.picture.name, '', '', opinion.word.id, opinion.word.left, opinion.word.right, @mark, opinion.updated_at]
+							end
 						end
 					else
 						phase.opinions.each do |opinion|
-							csv << [session.id, session.name, session.created_at, phase.id, '', '', phase.music.id, phase.music.name, opinion.word.id, opinion.word.left, opinion.word.right, opinion.mark, opinion.updated_at]
+							if opinion.mark > 0
+								csv << [session.id, session.name, session.created_at, phase.id, '', '', phase.music.id, phase.music.name, opinion.word.id, opinion.word.left, opinion.word.right, opinion.mark, opinion.updated_at]
+							else
+								@mark = opinion.mark * -1
+								csv << [session.id, session.name, session.created_at, phase.id, '', '', phase.music.id, phase.music.name, opinion.word.id, opinion.word.left, opinion.word.right, @mark, opinion.updated_at]
+							end
 						end
 					end
 				end
@@ -55,11 +65,21 @@ class Session < ActiveRecord::Base
 			self.phases.each do |phase|
 				if phase.picture
 					phase.opinions.each do |opinion|
-						csv << [self.id, self.name, self.created_at, phase.id, phase.picture.id, phase.picture.name, '', '', opinion.word.id, opinion.word.left, opinion.word.right, opinion.mark, opinion.updated_at]
+						if opinion.mark > 0
+							csv << [self.id, self.name, self.created_at, phase.id, phase.picture.id, phase.picture.name, '', '', opinion.word.id, opinion.word.left, opinion.word.right, opinion.mark, opinion.updated_at]
+						else
+							@mark = opinion.mark * -1
+							csv << [self.id, self.name, self.created_at, phase.id, phase.picture.id, phase.picture.name, '', '', opinion.word.id, opinion.word.left, opinion.word.right, @mark, opinion.updated_at]
+						end
 					end
 				else
 					phase.opinions.each do |opinion|
-						csv << [self.id, self.name, self.created_at, phase.id, '', '', phase.music.id, phase.music.name, opinion.word.id, opinion.word.left, opinion.word.right, opinion.mark, opinion.updated_at]
+						if opinion.mark > 0
+							csv << [self.id, self.name, self.created_at, phase.id, '', '', phase.music.id, phase.music.name, opinion.word.id, opinion.word.left, opinion.word.right, opinion.mark, opinion.updated_at]
+						else
+							@mark = opinion.mark * -1
+							csv << [self.id, self.name, self.created_at, phase.id, '', '', phase.music.id, phase.music.name, opinion.word.id, opinion.word.left, opinion.word.right, @mark, opinion.updated_at]
+						end
 					end
 				end
 			end
