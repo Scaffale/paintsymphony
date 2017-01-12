@@ -20,7 +20,9 @@ class Session < ActiveRecord::Base
 			self.phases.create(music: existing_music)
 		end
 
-		Music.all.each do |music|
+		@music_to_shuffle = Music.all
+		@shuffled_music = @music_to_shuffle.shuffle
+		@shuffled_music.each do |music|
 			self.finalphases.create(music: music)
 		end
 	end
