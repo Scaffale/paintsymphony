@@ -14,10 +14,10 @@
 .img-phase {
 	position: absolute;
 	height: auto;
-	top: 5%;
-	left: 16px;
-	max-width: 65%;
-	max-height: 90%;
+	position: relative;
+	top: 100px;
+	left: 120px;
+	width: 1200px;
 }
 
 .audio-phase {
