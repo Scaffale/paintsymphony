@@ -1,4 +1,5 @@
 <div class="phase-background">
+	<%= audio_tag @finalphase.music.sound, controls:true, style:"width:300px;", preload:'metadata', type: "audio/#{@finalphase.music.sound.extension}", class: 'audio-finalphase' %>
 	<div class="final-left col-md-7">
 		<div class="large-hover-image">
 			<%= image_tag 'rectangle.jpg', id:'image-big-finalphase' %>
@@ -14,18 +15,22 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
-				<div class="istruzioni text-lg-center">
+				<div class="istruzioni-final text-lg-center">
 				<p>Ascolta la musica e trascina le immagini che associeresti al brano. L'ordine è da sinistra a destra (prima scelta, seconda scelta, terza scelta).</p>
 			</div>
 			</div>
 		</div>
 		<div class="finalphase-controller">
-			<div class="small-three">
-				<%= image_tag '1.png', class:'finalphase-choice', id:'first-choice', alt:'0' %>
-				<%= image_tag '2.png', class:'finalphase-choice', id:'second-choice', alt:'0' %>
-				<%= image_tag '3.png', class:'finalphase-choice', id:'third-choice', alt:'0' %>
+			<div class="small-three-hover">
+				<span class="numero-hover">1</span>
+				<span class="numero-hover">2</span>
+				<span class="numero-hover">3</span>
 			</div>
-			<%= audio_tag @finalphase.music.sound, controls:true, style:"width:300px;", preload:'metadata', type: "audio/#{@finalphase.music.sound.extension}", class: 'audio-finalphase' %>
+			<div class="small-three">
+				<%= image_tag 'rectangle.jpg', class:'finalphase-choice', id:'first-choice', alt:'0' %>
+				<%= image_tag 'rectangle.jpg', class:'finalphase-choice', id:'second-choice', alt:'0' %>
+				<%= image_tag 'rectangle.jpg', class:'finalphase-choice', id:'third-choice', alt:'0' %>
+			</div>
 			<%= form_for Finalopinion.new(finalphase: @finalphase, music: @finalphase.music) do |f| %>
 				<%= f.hidden_field :pictures0, :value => '0', id: 'first-choice-text' %>
 				<%= f.hidden_field :pictures1, :value => '0', id: 'second-choice-text' %>

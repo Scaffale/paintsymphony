@@ -7,7 +7,11 @@
 	<div class="row">
 		<div class="col-lg-3 offset-lg-8">
 			<div class="istruzioni text-lg-center">
-				<p>In base all'opera che vede, sposti il cursore verso sinistra o verso destra, per valutarne la dimensione più appropriata.</p>
+				<% if @phase.picture %>
+					<p>In base all'opera che vede, sposti il cursore verso sinistra o verso destra, per valutarne la dimensione più appropriata.</p>
+				<% else %>
+					<p>In base alla clip musicale che sente, sposti il cursore verso sinistra o verso destra, per valutarne la dimensione più appropriata. Può ascoltare quante volte deisdera la clip.</p>
+				<% end %>
 			</div>
 		</div>
 	</div>

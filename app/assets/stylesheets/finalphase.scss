@@ -10,9 +10,9 @@
 }
 
 .audio-finalphase {
-	position: relative;
-	top: 30px;
-	left: 15px;
+    position: absolute;
+    bottom: 50px;
+    left: 555px;
 }
 
 .picture-finalphase {
@@ -23,8 +23,8 @@
 	position: relative;
 	height: auto;
 	top: 100px;
-	left: 120px;
-	width: 1200px;
+	left: 200px;
+	width: 1000px;
 }
 
 .small-three {
@@ -32,6 +32,16 @@
 	top: 15px;
 	left: 5%;
 	margin-bottom: 15px;
+}
+
+.small-three-hover {
+
+}
+
+.numero-hover {
+	font-size: 100px;
+	padding-right: 20px;
+	margin-left: 20px;
 }
 
 .finalphase-choice {
@@ -45,7 +55,7 @@
 	margin-top: 35px;
 	margin-left: 127px;
 }
-.istruzioni {
+.istruzioni-final {
 	margin-top: 20%;
 	color: #BBB;
 }

@@ -16,8 +16,8 @@
 	height: auto;
 	position: relative;
 	top: 100px;
-	left: 120px;
-	width: 1200px;
+	left: 200px;
+	width: 1000px;
 }
 
 .audio-phase {
@@ -47,6 +47,7 @@
 	margin-right: 10px;
 }
 .istruzioni {
-	margin-top: 20%;
+	top: -600px;
 	color: #BBB;
+	position: absolute;
 }
