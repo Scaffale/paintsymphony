@@ -1,4 +1,4 @@
-<div class="phase-background">
+<div class="phase-background container">
 	<% unless @phase.picture %>
 		<%= audio_tag @phase.music.sound, controls:true, style:"width:300px;", preload:'metadata', type: "audio/#{@phase.music.sound.extension}", class: 'audio-phase' %>
 	<% else %>

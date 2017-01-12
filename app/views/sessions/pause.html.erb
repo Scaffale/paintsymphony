@@ -1,17 +1,19 @@
-<h1>PAUSA! <span id="time"></h1>
-<h6>Ci sono <strong>10 minuti</strong>di pausa, ma ricordati di arrivare in tempo per leggere le istruzioni.</h6>
-<h5>Seconda parte:</h5>
-<p>In questa seconda parte vedrai sulla <em>destra</em> la lista di tutte le opere che hai valutato fino ad ora.
-<br>
-Per vedere l'opera in grande è sufficiente passarci <em>sopra</em> con il mouse.
-<br>
-Sotto le opere ci sarà un estratto di una sinfonia che potrai ascoltare <em>quante volte vuoi</em>.
-<br>
-Dovrai scegliere <strong>3 quadri</strong> da associare all'estratto. Per associare i quadri <strong>trascinali con il mouse</strong> su uno dei 3 quadrati in basso.
-<br>
-L'ordine della scelta è da sinistra a destra (1 - 2 - 3).
-<br>
-Se decidi di cambiare il quadro scelto puoi trascinarne un altro sopra.
-</p>
+<div class="text-justify">
+	<h1>PAUSA! <span id="time"></h1>
+	<h6>Ci sono <strong>10 minuti</strong>di pausa, ma ricordati di arrivare in tempo per leggere le istruzioni.</h6>
+	<h5>Seconda parte:</h5>
+	<p>In questa seconda parte vedrai sulla <em>destra</em> la lista di tutte le opere che hai valutato fino ad ora.
+	<br>
+	Per vedere l'opera in grande è sufficiente passarci <em>sopra</em> con il mouse.
+	<br>
+	Sotto le opere ci sarà un estratto di una sinfonia che potrai ascoltare <em>quante volte vuoi</em>.
+	<br>
+	Dovrai scegliere <strong>3 quadri</strong> da associare all'estratto. Per associare i quadri <strong>trascinali con il mouse</strong> su uno dei 3 quadrati in basso.
+	<br>
+	L'ordine della scelta è da sinistra a destra (1 - 2 - 3).
+	<br>
+	Se decidi di cambiare il quadro scelto puoi trascinarne un altro sopra.
+	</p>	
+</div>
 
-<%= link_to "Inizia la seconda parte", { controller: "finalphases", action: "show", id: @session.finalphases.first }, class: 'btn btn-outline-success' %>
+<%= link_to "Inizia la seconda parte", { controller: "finalphases", action: "show", id: @session.finalphases.first }, class: 'btn btn-lg btn-outline-success' %>
