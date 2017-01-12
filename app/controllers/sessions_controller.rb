@@ -15,24 +15,24 @@ class SessionsController < ApplicationController
   # GET /sessions/1
   # GET /sessions/1.json
   def show
+    @session.finalphases.all.each do |finalphase|
+      unless finalphase.finalopinion
+        redirect_to finalphase
+        return
+      end
+    end
+    if @session.finalphases.last.finalopinion
+      unless @session.phases.first.opinions.first.mark
+        render :pause
+        return
+      end
+    end
     # Redirect to phase se l'ultima fase non ha opinione
     unless @session.phases.last.opinions.last.mark
       @session.phases.all.each do |phase|
         unless phase.opinions.last.mark
           redirect_to phase
-          break
-        end
-      end
-    end
-    if @session.phases.last.opinions.last.mark
-      unless @session.finalphases.first.finalopinion
-        render :pause
-        return
-      end
-      @session.finalphases.all.each do |finalphase|
-        unless finalphase.finalopinion
-          redirect_to finalphase
-          break
+          return
         end
       end
     end
