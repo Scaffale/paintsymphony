@@ -21,9 +21,9 @@
 		</div>
 		<div class="finalphase-controller">
 			<div class="small-three">
-				<%= image_tag 'rectangle.jpg', class:'finalphase-choice', id:'first-choice', alt:'0' %>
-				<%= image_tag 'rectangle.jpg', class:'finalphase-choice', id:'second-choice', alt:'0' %>
-				<%= image_tag 'rectangle.jpg', class:'finalphase-choice', id:'third-choice', alt:'0' %>
+				<%= image_tag '1.png', class:'finalphase-choice', id:'first-choice', alt:'0' %>
+				<%= image_tag '2.png', class:'finalphase-choice', id:'second-choice', alt:'0' %>
+				<%= image_tag '3.png', class:'finalphase-choice', id:'third-choice', alt:'0' %>
 			</div>
 			<%= audio_tag @finalphase.music.sound, controls:true, style:"width:300px;", preload:'metadata', type: "audio/#{@finalphase.music.sound.extension}", class: 'audio-finalphase' %>
 			<%= form_for Finalopinion.new(finalphase: @finalphase, music: @finalphase.music) do |f| %>
