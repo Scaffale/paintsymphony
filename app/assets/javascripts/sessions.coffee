@@ -32,3 +32,8 @@ window.onload = ->
   startTimer fiveMinutes, display
   return
 
+$(document).on 'click', '#bottonePausa', ->
+  $('#pausaTimer')[0].style.position = 'absolute'
+  $('#pausaTimer')[0].style.left = -10000 + 'px'
+  $('#istruzioniDue')[0].style.margin = 100 + 'px'
+  return

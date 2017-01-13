@@ -39,7 +39,6 @@ class SessionsController < ApplicationController
   end
 
   def pause
-    
   end
 
   # GET /sessions/new

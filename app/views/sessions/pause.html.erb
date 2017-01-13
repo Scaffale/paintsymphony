@@ -1,9 +1,10 @@
-<div class="text-justify">
+<div class="text-justify" id="pausaTimer">
 	<h1>PAUSA! <span id="time"></h1>
-	<h6>Ci sono <strong>10 minuti</strong>di pausa, ma ricordati di arrivare in tempo per leggere le istruzioni.</h6>
+	<button class="btn btn-lg btn-outline-info" id="bottonePausa">Inizia la seconda parte</button>
+</div>
+<div class="text-justify" id="istruzioniDue" style="margin: 100000px;">
 	<h5>Seconda parte:</h5>
 	<p>In questa seconda parte lei dovrà associare i brani musicali, che le vengono presentati uno alla volta, ai quadri che vedrà simultaneamente sullo schermo. Passando col mouse sui singoli quadri, questi le appariranno sulla parte sinistra dello schermo, ingranditi. Per ogni clip è prevista l'associazione a 3 quadri, in ordine decrescente di appropriatezza (da sinistra a destra)
-	</p>	
+	</p>
+	<%= link_to "Inizia la seconda parte", { controller: "finalphases", action: "show", id: @session.finalphases.first }, class: 'btn btn-lg btn-outline-success' %>
 </div>
-
-<%= link_to "Inizia la seconda parte", { controller: "finalphases", action: "show", id: @session.finalphases.first }, class: 'btn btn-lg btn-outline-success' %>
