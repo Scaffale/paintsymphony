@@ -2,7 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery(document).ready ->
-  jQuery('#zoom_01').elevateZoom
-    galleryActiveClass: 'active'
-    imageCrossfade: true
-  return
+	jQuery('#zoom_01').elevateZoom
+		zoomType: 'lens'
+		lensShape: 'round'
+		lensSize: 300
+		imageCrossfade: true
+	return
