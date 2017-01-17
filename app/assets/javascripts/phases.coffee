@@ -5,6 +5,7 @@ jQuery(document).ready ->
 	jQuery('#zoom_01').elevateZoom
 		zoomType: 'lens'
 		lensShape: 'round'
-		lensSize: 300
+		lensSize: 500
+		scrollZoom : true
 		imageCrossfade: true
 	return
