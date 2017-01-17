@@ -4,7 +4,7 @@
 
 jQuery(document).ready ->
 	jQuery('.picture-finalphase').hover ->
-		jQuery('#image-big-finalphase').attr 'src', $(this)[0].src
+		jQuery('#image-big-finalphase').attr 'src', jQuery(this)[0].src
 		return
 
 document.addEventListener 'dragstart', (event) ->
