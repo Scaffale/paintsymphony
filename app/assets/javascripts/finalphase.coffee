@@ -2,9 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).ready ->
-	$('.picture-finalphase').hover ->
-		$('#image-big-finalphase').attr 'src', $(this)[0].src
+jQuery(document).ready ->
+	jQuery('.picture-finalphase').hover ->
+		jQuery('#image-big-finalphase').attr 'src', $(this)[0].src
 		return
 
 document.addEventListener 'dragstart', (event) ->

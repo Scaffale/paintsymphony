@@ -29,11 +29,12 @@ startTimer = (duration, display) ->
 window.onload = ->
   fiveMinutes = 60 * 10
   display = document.querySelector('#time')
-  startTimer fiveMinutes, display
+  if display != null
+    startTimer fiveMinutes, display
   return
 
-$(document).on 'click', '#bottonePausa', ->
-  $('#pausaTimer')[0].style.position = 'absolute'
-  $('#pausaTimer')[0].style.left = -10000 + 'px'
-  $('#istruzioniDue')[0].style.margin = 100 + 'px'
+jQuery(document).on 'click', '#bottonePausa', ->
+  jQuery('#pausaTimer')[0].style.position = 'absolute'
+  jQuery('#pausaTimer')[0].style.left = -10000 + 'px'
+  jQuery('#istruzioniDue')[0].style.margin = 100 + 'px'
   return
