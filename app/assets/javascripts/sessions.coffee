@@ -27,7 +27,7 @@ startTimer = (duration, display) ->
   return
 
 window.onload = ->
-  fiveMinutes = 60 * 10
+  fiveMinutes = 60 * 20
   display = document.querySelector('#time')
   if display != null
     startTimer fiveMinutes, display
