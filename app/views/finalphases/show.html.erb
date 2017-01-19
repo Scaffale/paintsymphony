@@ -7,10 +7,16 @@
 	</div>
 	<div class="col-md-5">
 		<div class="">
-			<% Picture.all.each do |picture| %>
+			<% Picture.all.each_with_index do |picture, i| %>
+				<% if i % 4 == 0 %>
+					<div class="row">
+				<% end %>
 				<div class="col-md-3">
 					<%= image_tag picture.image, class:'picture-finalphase draggable', id:picture.id, draggable:'true' %>					
 				</div>
+				 <% if i % 4 == 3 %>
+					</div>
+				<% end %>
 			<% end %>	
 		</div>
 		<div class="row">
