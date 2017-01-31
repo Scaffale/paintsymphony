@@ -1,8 +1,6 @@
 Paintsymphony
 ================
 
-[![Deployed on Heroku](https://www.herokucdn.com/deploy/button.png)](https://paintsymphony.herokuapp.com)
-
 This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
 provided by the [RailsApps Project](http://railsapps.github.io/).
 
@@ -30,23 +28,16 @@ Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.
 
 Getting Started
 ---------------
-If you need to run a test jsut open the heroku link and press the "GO" button under "New Experiment". If you have permissions to gather the data or change them press the other button.
-
-Documentation and Support
--------------------------
+Clone it or download it, 
+```
+bundle
+rails s
+```
 
 Issues
 -------------
 Because of the audio tag it works better on Firefox.
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
+If one session is not concluded the download does not work, same if one image or music or word is deleted.
 
 License
 -------
