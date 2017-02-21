@@ -33,6 +33,13 @@ Clone it or download it,
 bundle
 rails s
 ```
+The password for the 'admin' side is 
+```
+liliana
+```
+Upload images, musics and words.
+Start the test.
+
 
 Issues
 -------------
